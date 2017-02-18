@@ -1,6 +1,7 @@
 # SomaScrobblerApi for Android
 [![Download](https://api.bintray.com/packages/saschpe/maven/android-somascrobblerapi/images/download.svg)](https://bintray.com/saschpe/maven/android-somascrobblerapi/_latestVersion)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
+[![Build Status](https://travis-ci.org/saschpe/android-versioninfo.svg?branch=master)](https://travis-ci.org/saschpe/android-versioninfo)
 
 Android client library for [SomaScrobbler API][somascrob]. The test-suite
 defaults to the official deployment at [api.somascrobbler.com][somascrob-api].
