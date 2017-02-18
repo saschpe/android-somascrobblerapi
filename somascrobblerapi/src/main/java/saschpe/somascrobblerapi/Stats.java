@@ -19,5 +19,6 @@ package saschpe.somascrobblerapi;
 public final class Stats {
     public String uptime;
     public String connections;
+    // TODO: Fix API to provide an array:
     //public List<String> lastTrackUpdates;
 }
