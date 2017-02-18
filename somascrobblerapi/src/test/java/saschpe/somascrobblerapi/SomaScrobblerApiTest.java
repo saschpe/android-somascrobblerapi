@@ -60,6 +60,8 @@ public class SomaScrobblerApiTest {
         Version version = api.getVersion();
 
         assertNotNull(version);
+        assertNotNull(version.version);
+        assertNotNull(version.socketIo);
     }
 
     @Test
@@ -78,6 +80,18 @@ public class SomaScrobblerApiTest {
 
         assertNotNull(stations);
         assertFalse(stations.isEmpty());
+
+        Station grooveSalad = stations.get(GROOVE_SALAD_ID);
+
+        assertNotNull(grooveSalad);
+        assertEquals(GROOVE_SALAD_ID, grooveSalad.id);
+        assertEquals(GROOVE_SALAD_TITLE, grooveSalad.title);
+        assertNotNull(grooveSalad.description);
+        assertNotNull(grooveSalad.dj);
+        assertNotNull(grooveSalad.image);
+        assertNotNull(grooveSalad.image.small);
+        assertNotNull(grooveSalad.image.medium);
+        assertNotNull(grooveSalad.image.large);
     }
 
     @Test
@@ -86,5 +100,10 @@ public class SomaScrobblerApiTest {
 
         assertNotNull(nowPlaying);
         assertEquals(GROOVE_SALAD_ID, nowPlaying.stationId);
+        assertNotNull(nowPlaying.album);
+        assertNotNull(nowPlaying.artist);
+        assertNotNull(nowPlaying.title);
+        assertTrue(nowPlaying.time >= 0);
+        assertTrue(nowPlaying.duration > 0);
     }
 }
