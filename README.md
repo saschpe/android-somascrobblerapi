@@ -14,7 +14,8 @@ SomaScrobblerApi api = new SomaScrobblerApi(new SomaScrobblerApi.Settings.Builde
 
 Version version = api.getVersion();
 Stats stats = api.getStats();
-List<Station> stations = api.getStations();
+Map<String, Station> stations = api.getStations();
+NowPlaying nowPlaying = api.getNowPlaying("groovesalad");
 ```
 
 # Download
