@@ -17,14 +17,13 @@
 package saschpe.somascrobblerapi;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Response;
@@ -51,6 +50,7 @@ public class SomaScrobblerApiServiceTest {
         assertNotNull(call);
 
         Response<Version> response = call.execute();
+
         assertTrue(response.isSuccessful());
         assertNotNull(response.body());
     }
@@ -61,16 +61,18 @@ public class SomaScrobblerApiServiceTest {
         assertNotNull(call);
 
         Response<Stats> response = call.execute();
+
         assertTrue(response.isSuccessful());
         assertNotNull(response.body());
     }
 
-    @Ignore // @Test // TODO: Fix API to provide an array:
+    @Test
     public void getStations() throws IOException {
-        Call<List<Station>> call = service.getStations();
+        Call<Map<String, Station>> call = service.getStations();
         assertNotNull(call);
 
-        Response<List<Station>> response = call.execute();
+        Response<Map<String, Station>> response = call.execute();
+
         assertTrue(response.isSuccessful());
         assertNotNull(response.body());
     }
@@ -81,6 +83,7 @@ public class SomaScrobblerApiServiceTest {
         assertNotNull(call);
 
         Response<NowPlaying> response = call.execute();
+
         assertTrue(response.isSuccessful());
         assertNotNull(response.body());
     }

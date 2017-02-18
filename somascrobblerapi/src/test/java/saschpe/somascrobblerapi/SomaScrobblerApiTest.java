@@ -17,15 +17,15 @@
 package saschpe.somascrobblerapi;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -58,18 +58,24 @@ public class SomaScrobblerApiTest {
     @Test
     public void getVersion() throws IOException {
         Version version = api.getVersion();
+
         assertNotNull(version);
     }
 
     @Test
     public void getStats() throws IOException {
         Stats stats = api.getStats();
+
         assertNotNull(stats);
+        assertTrue(stats.connections > 0);
+        assertTrue(stats.uptime_ms > 0);
+        assertFalse(stats.lastTrackUpdates.isEmpty());
     }
 
-    @Ignore // @Test // TODO: Fix API to provide an array:
+    @Test
     public void getStations() throws IOException {
-        List<Station> stations = api.getStations();
+        Map<String, Station> stations = api.getStations();
+
         assertNotNull(stations);
         assertFalse(stations.isEmpty());
     }
@@ -77,8 +83,8 @@ public class SomaScrobblerApiTest {
     @Test
     public void getNowPlaying() throws IOException {
         NowPlaying nowPlaying = api.getNowPlaying(GROOVE_SALAD_ID);
-        assertNotNull(nowPlaying);
 
+        assertNotNull(nowPlaying);
         assertEquals(GROOVE_SALAD_ID, nowPlaying.stationId);
     }
 }

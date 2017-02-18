@@ -16,7 +16,7 @@
 
 package saschpe.somascrobblerapi;
 
-import java.util.List;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -32,7 +32,7 @@ interface SomaScrobblerApiService {
     Call<Version> getVersion();
 
     @GET("/api/v1/stations")
-    Call<List<Station>> getStations();
+    Call<Map<String, Station>> getStations();
 
     @GET("/api/v1/stats")
     Call<Stats> getStats();

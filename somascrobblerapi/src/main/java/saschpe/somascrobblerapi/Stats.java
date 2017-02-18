@@ -16,9 +16,10 @@
 
 package saschpe.somascrobblerapi;
 
+import java.util.Map;
+
 public final class Stats {
-    public String uptime;
-    public String connections;
-    // TODO: Fix API to provide an array:
-    //public List<String> lastTrackUpdates;
+    public long uptime_ms;
+    public long connections;
+    public Map<String, Long> lastTrackUpdates;
 }
