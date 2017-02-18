@@ -9,7 +9,7 @@ TODO
 
 # Download
 ```groovy
-compile 'saschpe:somascrobblerapi:1.0.0'
+compile 'saschpe.android:somascrobblerapi:1.0.0'
 ```
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].

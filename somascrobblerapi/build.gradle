@@ -62,7 +62,7 @@ dependencies {
     testCompile 'org.robolectric:robolectric:3.2.2'
 }
 
-group = 'saschpe'
+group = 'saschpe.android'
 version = android.defaultConfig.versionName
 
 ext {
