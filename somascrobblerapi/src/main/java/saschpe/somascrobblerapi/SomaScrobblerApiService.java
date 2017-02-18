@@ -27,13 +27,13 @@ import retrofit2.http.GET;
  * @link https://api.somascrobbler.com/
  */
 interface SomaScrobblerApiService {
-    @GET("api/v1/getVersion")
+    @GET("api/v1/version")
     Call<Version> getVersion();
 
-    @GET("/api/v1/getStations")
+    @GET("/api/v1/stations")
     Call<List<Station>> getStations();
 
-    @GET("/api/v1/getStats")
+    @GET("/api/v1/stats")
     Call<Stats> getStats();
 
     //@GET("/api/v1/nowplaying/{station}")
