@@ -34,7 +34,7 @@ android {
         targetSdkVersion 25
         versionName '1.0.0'
 
-        buildConfigField "String", "TEST_ENDPOINT", "\"${properties['test.endpoint']}\""
+        buildConfigField "String", "TEST_ENDPOINT", "\"${project.properties["test.endpoint"]}\""
     }
 
     lintOptions {
