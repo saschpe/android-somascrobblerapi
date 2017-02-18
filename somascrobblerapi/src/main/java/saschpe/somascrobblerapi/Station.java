@@ -17,9 +17,16 @@
 package saschpe.somascrobblerapi;
 
 public final class Station {
-    String id;
-    String title;
-    String description;
-    String dj;
-    String genre;
+    public String id;
+    public String title;
+    public String description;
+    public String dj;
+    public String genre;
+    public Image image;
+
+    public final class Image {
+        public String small;
+        public String medium;
+        public String large;
+    }
 }
