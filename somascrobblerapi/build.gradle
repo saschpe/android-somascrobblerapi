@@ -1,0 +1,157 @@
+/*
+ * Copyright 2017 Sascha Peilicke
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+apply plugin: 'com.android.library'
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('gradle.properties').newDataInputStream())
+Properties properties2 = new Properties();
+properties2.load(project.rootProject.file('local.properties').newDataInputStream())
+properties.putAll(properties2);
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.2'
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionName '1.0.0'
+
+        buildConfigField "String", "TEST_ENDPOINT", "\"${properties.getProperty('test.endpoint')}\""
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+
+    buildTypes {
+        debug {
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    // Runtime dependencies
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+
+    // Test dependencies
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.2.2'
+}
+
+group = 'saschpe'
+version = android.defaultConfig.versionName
+
+ext {
+    siteUrl = 'https://github.com/saschpe/android-somascrobblerapi'
+    gitUrl = 'https://github.com/saschpe/android-somascrobblerapi.git'
+    descr = 'SomaScrobblerApi for Android.'
+}
+
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives'] //When uploading configuration files
+    pkg {
+        repo = 'maven'
+        name = 'android-somascrobblerapi'
+        userOrg = 'saschpe'
+        websiteUrl = siteUrl
+        issueTrackerUrl = 'https://github.com/saschpe/android-somascrobblerapi/issues'
+        vcsUrl = gitUrl
+        licenses = ['Apache-2.0']
+        desc = descr
+        labels = ['aar', 'android']
+        publish = true
+        publicDownloadNumbers = true
+
+        githubRepo = 'saschpe/android-somascrobblerapi'
+        githubReleaseNotesFile = 'README.md'
+
+        version {
+            name = android.defaultConfig.versionName
+            desc = descr
+        }
+    }
+}
+
+task createPom {
+    pom {
+        project {
+            packaging 'aar'
+
+            name project.name
+            description descr
+            url siteUrl
+            inceptionYear '2017'
+
+            licenses {
+                license {
+                    name 'The Apache Software License, Version 2.0'
+                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                }
+            }
+            scm {
+                connection gitUrl
+                developerConnection gitUrl
+                url siteUrl
+            }
+            developers {
+                developer {
+                    id 'saschpe'
+                    name 'Sascha Peilicke'
+                    email 'sascha@peilicke.de'
+                }
+            }
+        }
+    }.writeTo("$buildDir/poms/pom-default.xml").writeTo("pom.xml")
+}
+build.dependsOn createPom
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+    failOnError false
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
