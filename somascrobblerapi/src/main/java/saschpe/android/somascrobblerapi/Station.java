@@ -14,29 +14,19 @@
  * limitations under the License.
  */
 
-package saschpe.somascrobblerapi;
+package saschpe.android.somascrobblerapi;
 
-import java.util.Map;
+public final class Station {
+    public String id;
+    public String title;
+    public String description;
+    public String dj;
+    public String genre;
+    public Image image;
 
-import retrofit2.Call;
-import retrofit2.http.GET;
-import retrofit2.http.Path;
-
-/**
- * Retrofit API class for SomaScrobbler-API.
- *
- * @link https://api.somascrobbler.com/
- */
-interface SomaScrobblerApiService {
-    @GET("api/v1/version")
-    Call<Version> getVersion();
-
-    @GET("/api/v1/stations")
-    Call<Map<String, Station>> getStations();
-
-    @GET("/api/v1/stats")
-    Call<Stats> getStats();
-
-    @GET("/api/v1/nowplaying/{station}")
-    Call<NowPlaying> getNowPlaying(@Path("station") String station);
+    public final class Image {
+        public String small;
+        public String medium;
+        public String large;
+    }
 }

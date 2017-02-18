@@ -14,18 +14,14 @@
  * limitations under the License.
  */
 
-package saschpe.somascrobblerapi;
+package saschpe.android.somascrobblerapi;
 
-public final class NowPlaying {
-    public String stationId;
-    public long time;
-    public String artist;
-    public String title;
-    public String album;
-    //public boolean trackCorrected;
-    //public boolean artistCorrected;
-    //public boolean albumCorrected;
-    //public boolean corrected;
-    public long duration;
-    //public boolean durationEstimated;
+/**
+ * Exception thrown by {@link SomaScrobblerApi.Settings.Builder} in case of
+ * missing or invalid options.
+ */
+public final class SettingsBuildException extends RuntimeException {
+    SettingsBuildException(String message) {
+        super(message);
+    }
 }

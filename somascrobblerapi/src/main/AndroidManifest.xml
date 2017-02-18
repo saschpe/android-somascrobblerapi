@@ -15,7 +15,7 @@
   -->
 
 <manifest
-    package="saschpe.somascrobblerapi">
+    package="saschpe.android.somascrobblerapi">
 
     <application />
 

@@ -14,19 +14,9 @@
  * limitations under the License.
  */
 
-package saschpe.somascrobblerapi;
+package saschpe.android.somascrobblerapi;
 
-public final class Station {
-    public String id;
-    public String title;
-    public String description;
-    public String dj;
-    public String genre;
-    public Image image;
-
-    public final class Image {
-        public String small;
-        public String medium;
-        public String large;
-    }
+public final class Version {
+    public String version;
+    public String socketIo;
 }

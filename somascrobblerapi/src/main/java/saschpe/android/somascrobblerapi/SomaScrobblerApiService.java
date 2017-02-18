@@ -14,12 +14,29 @@
  * limitations under the License.
  */
 
-package saschpe.somascrobblerapi;
+package saschpe.android.somascrobblerapi;
 
 import java.util.Map;
 
-public final class Stats {
-    public long uptime_ms;
-    public long connections;
-    public Map<String, Long> lastTrackUpdates;
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Path;
+
+/**
+ * Retrofit API class for SomaScrobbler-API.
+ *
+ * @link https://api.somascrobbler.com/
+ */
+interface SomaScrobblerApiService {
+    @GET("api/v1/version")
+    Call<Version> getVersion();
+
+    @GET("/api/v1/stations")
+    Call<Map<String, Station>> getStations();
+
+    @GET("/api/v1/stats")
+    Call<Stats> getStats();
+
+    @GET("/api/v1/nowplaying/{station}")
+    Call<NowPlaying> getNowPlaying(@Path("station") String station);
 }

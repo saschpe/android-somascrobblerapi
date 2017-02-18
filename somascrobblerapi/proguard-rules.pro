@@ -1,5 +1,5 @@
 -keepattributes EnclosingMethod
--keep class saschpe.somascrobblerapi.** { *; }
+-keep class saschpe.android.somascrobblerapi.** { *; }
 
 # Retrofit
 # Platform calls Class.forName on types which do not exist on Android to determine platform.

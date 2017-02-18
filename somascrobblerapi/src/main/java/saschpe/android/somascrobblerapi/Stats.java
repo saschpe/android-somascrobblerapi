@@ -14,9 +14,12 @@
  * limitations under the License.
  */
 
-package saschpe.somascrobblerapi;
+package saschpe.android.somascrobblerapi;
 
-public final class Version {
-    public String version;
-    public String socketIo;
+import java.util.Map;
+
+public final class Stats {
+    public long uptime_ms;
+    public long connections;
+    public Map<String, Long> lastTrackUpdates;
 }

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package saschpe.somascrobblerapi;
+package saschpe.android.somascrobblerapi;
 
 import java.io.IOException;
 import java.util.Map;
