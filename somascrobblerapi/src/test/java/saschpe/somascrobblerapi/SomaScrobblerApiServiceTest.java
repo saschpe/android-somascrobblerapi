@@ -34,6 +34,8 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 23)
 public class SomaScrobblerApiServiceTest {
+    private static final String GROOVE_SALAD = "groovesalad";
+
     private SomaScrobblerApiService service;
 
     @Before
@@ -68,6 +70,16 @@ public class SomaScrobblerApiServiceTest {
         assertNotNull(call);
 
         Response<List<Station>> response = call.execute();
+        assertTrue(response.isSuccessful());
+        assertNotNull(response.body());
+    }
+
+    @Test
+    public void getNowPlaying() throws IOException {
+        Call<NowPlaying> call = service.getNowPlaying(GROOVE_SALAD);
+        assertNotNull(call);
+
+        Response<NowPlaying> response = call.execute();
         assertTrue(response.isSuccessful());
         assertNotNull(response.body());
     }

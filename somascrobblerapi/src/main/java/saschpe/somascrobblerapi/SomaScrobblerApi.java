@@ -86,6 +86,21 @@ public final class SomaScrobblerApi {
     }
 
     /**
+     * Retrieves {@link NowPlaying} information for a particular station.
+     *
+     * @return {@link NowPlaying} instance
+     * @throws IOException in case of network errors
+     */
+    public NowPlaying getNowPlaying(final String station) throws IOException {
+        Response<NowPlaying> response = client.getService()
+                .getNowPlaying(station).execute();
+        if (response.isSuccessful() && response.body() != null) {
+            return response.body();
+        }
+        return null; // TODO: Better API!
+    }
+
+    /**
      * Settings for the {@link SomaScrobblerApi}.
      *
      * Use {@link Settings.Builder} to create a new instance and configure it accordingly.

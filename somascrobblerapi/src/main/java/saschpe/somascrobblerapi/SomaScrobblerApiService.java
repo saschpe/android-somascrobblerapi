@@ -20,6 +20,7 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 
 /**
  * Retrofit API class for SomaScrobbler-API.
@@ -36,6 +37,6 @@ interface SomaScrobblerApiService {
     @GET("/api/v1/stats")
     Call<Stats> getStats();
 
-    //@GET("/api/v1/nowplaying/{station}")
-    //Call<JSONObject> getNowPlaying(@Path("station") String station);
+    @GET("/api/v1/nowplaying/{station}")
+    Call<NowPlaying> getNowPlaying(@Path("station") String station);
 }

@@ -16,8 +16,16 @@
 
 package saschpe.somascrobblerapi;
 
-public final class Stats {
-    public String uptime;
-    public String connections;
-    //public List<String> lastTrackUpdates;
+public final class NowPlaying {
+    public String stationId;
+    public long time;
+    public String artist;
+    public String title;
+    public String album;
+    //public boolean trackCorrected;
+    //public boolean artistCorrected;
+    //public boolean albumCorrected;
+    //public boolean corrected;
+    public long duration;
+    //public boolean durationEstimated;
 }

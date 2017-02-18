@@ -32,6 +32,9 @@ import static org.junit.Assert.assertNotNull;
 @RunWith(RobolectricTestRunner.class)
 @Config(constants = BuildConfig.class, sdk = 23)
 public class SomaScrobblerApiTest {
+    private static final String GROOVE_SALAD_ID = "groovesalad";
+    private static final String GROOVE_SALAD_TITLE = "Groove Salad";
+
     private SomaScrobblerApi api;
 
     @Before
@@ -68,5 +71,13 @@ public class SomaScrobblerApiTest {
         List<Station> stations = api.getStations();
         assertNotNull(stations);
         assertFalse(stations.isEmpty());
+    }
+
+    @Test
+    public void getNowPlaying() throws IOException {
+        NowPlaying nowPlaying = api.getNowPlaying(GROOVE_SALAD_ID);
+        assertNotNull(nowPlaying);
+
+        assertEquals(GROOVE_SALAD_ID, nowPlaying.stationId);
     }
 }
