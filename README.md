@@ -8,7 +8,7 @@ defaults to the official deployment at [api.somascrobbler.com][somascrob-api].
 # Usage
 ```java
 SomaScrobblerApi api = new SomaScrobblerApi(new SomaScrobblerApi.Settings.Builder()
-        .setEndpoint(BuildConfig.TEST_ENDPOINT)
+        .setEndpoint("https://api.somascrobbler.com/")
         .build());
 
 Version version = api.getVersion();
