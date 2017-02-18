@@ -69,7 +69,7 @@ public class SomaScrobblerApiTest {
         Stats stats = api.getStats();
 
         assertNotNull(stats);
-        assertTrue(stats.connections > 0);
+        assertTrue(stats.connections >= 0);
         assertTrue(stats.uptime_ms > 0);
         assertFalse(stats.lastTrackUpdates.isEmpty());
     }
@@ -104,6 +104,6 @@ public class SomaScrobblerApiTest {
         assertNotNull(nowPlaying.artist);
         assertNotNull(nowPlaying.title);
         assertTrue(nowPlaying.time >= 0);
-        assertTrue(nowPlaying.duration > 0);
+        assertTrue(nowPlaying.duration >= 0);
     }
 }
