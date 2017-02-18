@@ -23,8 +23,10 @@ import org.robolectric.RobolectricTestRunner;
 import org.robolectric.annotation.Config;
 
 import java.io.IOException;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
 @RunWith(RobolectricTestRunner.class)
@@ -59,5 +61,12 @@ public class SomaScrobblerApiTest {
     public void getStats() throws IOException {
         Stats stats = api.getStats();
         assertNotNull(stats);
+    }
+
+    @Test
+    public void getStations() throws IOException {
+        List<Station> stations = api.getStations();
+        assertNotNull(stations);
+        assertFalse(stations.isEmpty());
     }
 }

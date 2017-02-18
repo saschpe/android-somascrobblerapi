@@ -17,6 +17,7 @@
 package saschpe.somascrobblerapi;
 
 import java.io.IOException;
+import java.util.List;
 
 import retrofit2.Response;
 
@@ -63,6 +64,21 @@ public final class SomaScrobblerApi {
     public Stats getStats() throws IOException {
         Response<Stats> response = client.getService()
                 .getStats().execute();
+        if (response.isSuccessful() && response.body() != null) {
+            return response.body();
+        }
+        return null; // TODO: Better API!
+    }
+
+    /**
+     * Retrieves a list of {@link Station} instances.
+     *
+     * @return List of {@link Station} instances
+     * @throws IOException in case of network errors
+     */
+    public List<Station> getStations() throws IOException {
+        Response<List<Station>> response = client.getService()
+                .getStations().execute();
         if (response.isSuccessful() && response.body() != null) {
             return response.body();
         }
