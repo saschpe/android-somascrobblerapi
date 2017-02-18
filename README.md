@@ -2,10 +2,19 @@
 [![Download](https://api.bintray.com/packages/saschpe/maven/android-somascrobblerapi/images/download.svg)](https://bintray.com/saschpe/maven/android-somascrobblerapi/_latestVersion)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-TODO
+Android client library for [SomaScrobbler API][somascrob]. The test-suite
+defaults to the official deployment at [api.somascrobbler.com][somascrob-api].
 
 # Usage
-TODO
+```java
+SomaScrobblerApi api = new SomaScrobblerApi(new SomaScrobblerApi.Settings.Builder()
+        .setEndpoint(BuildConfig.TEST_ENDPOINT)
+        .build());
+
+Version version = api.getVersion();
+Stats stats = api.getStats();
+List<Station> stations = api.getStations();
+```
 
 # Download
 ```groovy
@@ -33,4 +42,6 @@ Snapshots of the development version are available in [Sonatype's `snapshots` re
 
 
 
+ [somascrob]: https://github.com/maxkueng/somascrobbler-api
+ [somascrob-api]: https://api.somascrobbler.com/
  [snap]: https://oss.sonatype.org/content/repositories/snapshots/
