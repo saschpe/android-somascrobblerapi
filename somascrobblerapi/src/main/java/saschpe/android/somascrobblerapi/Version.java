@@ -17,6 +17,19 @@
 package saschpe.android.somascrobblerapi;
 
 public final class Version {
-    public String version;
-    public String socketIo;
+    public final String version;
+    public final String socketIo;
+
+    public Version(String version, String socketIo) {
+        this.version = version;
+        this.socketIo = socketIo;
+    }
+
+    @Override
+    public String toString() {
+        return "Version{" +
+                "version='" + version + '\'' +
+                ", socketIo='" + socketIo + '\'' +
+                '}';
+    }
 }

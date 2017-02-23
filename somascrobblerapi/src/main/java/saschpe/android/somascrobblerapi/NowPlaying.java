@@ -17,15 +17,36 @@
 package saschpe.android.somascrobblerapi;
 
 public final class NowPlaying {
-    public String stationId;
-    public long time;
-    public String artist;
-    public String title;
-    public String album;
-    //public boolean trackCorrected;
-    //public boolean artistCorrected;
-    //public boolean albumCorrected;
-    //public boolean corrected;
-    public long duration;
-    //public boolean durationEstimated;
+    public final String stationId;
+    public final long time;
+    public final String artist;
+    public final String title;
+    public final String album;
+    //public final boolean trackCorrected;
+    //public final boolean artistCorrected;
+    //public final boolean albumCorrected;
+    //public final boolean corrected;
+    public final long duration;
+    //public final boolean durationEstimated;
+
+    public NowPlaying(String stationId, long time, String artist, String title, String album, long duration) {
+        this.stationId = stationId;
+        this.time = time;
+        this.artist = artist;
+        this.title = title;
+        this.album = album;
+        this.duration = duration;
+    }
+
+    @Override
+    public String toString() {
+        return "NowPlaying{" +
+                "stationId='" + stationId + '\'' +
+                ", time=" + time +
+                ", artist='" + artist + '\'' +
+                ", title='" + title + '\'' +
+                ", album='" + album + '\'' +
+                ", duration=" + duration +
+                '}';
+    }
 }

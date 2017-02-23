@@ -19,7 +19,22 @@ package saschpe.android.somascrobblerapi;
 import java.util.Map;
 
 public final class Stats {
-    public long uptime_ms;
-    public long connections;
-    public Map<String, Long> lastTrackUpdates;
+    public final long uptime_ms;
+    public final long connections;
+    public final Map<String, Long> lastTrackUpdates;
+
+    public Stats(long uptime_ms, long connections, Map<String, Long> lastTrackUpdates) {
+        this.uptime_ms = uptime_ms;
+        this.connections = connections;
+        this.lastTrackUpdates = lastTrackUpdates;
+    }
+
+    @Override
+    public String toString() {
+        return "Stats{" +
+                "uptime_ms=" + uptime_ms +
+                ", connections=" + connections +
+                ", lastTrackUpdates=" + lastTrackUpdates +
+                '}';
+    }
 }

@@ -17,16 +17,52 @@
 package saschpe.android.somascrobblerapi;
 
 public final class Station {
-    public String id;
-    public String title;
-    public String description;
-    public String dj;
-    public String genre;
-    public Image image;
+    public final String id;
+    public final String title;
+    public final String description;
+    public final String dj;
+    public final String genre;
+    public final Image image;
+
+    public Station(String id, String title, String description, String dj, String genre, Image image) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.dj = dj;
+        this.genre = genre;
+        this.image = image;
+    }
+
+    @Override
+    public String toString() {
+        return "Station{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", dj='" + dj + '\'' +
+                ", genre='" + genre + '\'' +
+                ", image=" + image +
+                '}';
+    }
 
     public final class Image {
-        public String small;
-        public String medium;
-        public String large;
+        public final String small;
+        public final String medium;
+        public final String large;
+
+        public Image(String small, String medium, String large) {
+            this.small = small;
+            this.medium = medium;
+            this.large = large;
+        }
+
+        @Override
+        public String toString() {
+            return "Image{" +
+                    "small='" + small + '\'' +
+                    ", medium='" + medium + '\'' +
+                    ", large='" + large + '\'' +
+                    '}';
+        }
     }
 }
