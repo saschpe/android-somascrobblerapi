@@ -46,8 +46,6 @@ android {
             consumerProguardFiles 'proguard-rules.pro'
         }
         release {
-            minifyEnabled true
-            shrinkResources true
             proguardFiles 'proguard-rules.pro'
             consumerProguardFiles 'proguard-rules.pro'
         }
