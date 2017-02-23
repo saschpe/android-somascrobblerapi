@@ -16,6 +16,8 @@
 
 package saschpe.android.somascrobblerapi;
 
+import android.util.Log;
+
 import java.io.IOException;
 import java.util.Map;
 
@@ -27,6 +29,7 @@ import retrofit2.Response;
  * @link https://api.somascrobbler.com/
  */
 public final class SomaScrobblerApi {
+    private final String TAG = SomaScrobblerApi.class.getSimpleName();
     private final SomaScrobblerApiClient client;
 
     /**
@@ -51,6 +54,8 @@ public final class SomaScrobblerApi {
 
         if (response.isSuccessful() && response.body() != null) {
             return response.body();
+        } else {
+            Log.e(TAG, "getNowPlaying(): Response error: " + response.message());
         }
         return null; // TODO: Better API!
     }
@@ -66,6 +71,8 @@ public final class SomaScrobblerApi {
                 .getStats().execute();
         if (response.isSuccessful() && response.body() != null) {
             return response.body();
+        } else {
+            Log.e(TAG, "getNowPlaying(): Response error: " + response.message());
         }
         return null; // TODO: Better API!
     }
@@ -81,6 +88,8 @@ public final class SomaScrobblerApi {
                 .getStations().execute();
         if (response.isSuccessful() && response.body() != null) {
             return response.body();
+        } else {
+            Log.e(TAG, "getNowPlaying(): Response error: " + response.message());
         }
         return null; // TODO: Better API!
     }
@@ -96,6 +105,8 @@ public final class SomaScrobblerApi {
                 .getNowPlaying(station).execute();
         if (response.isSuccessful() && response.body() != null) {
             return response.body();
+        } else {
+            Log.e(TAG, "getNowPlaying(): Response error: " + response.message());
         }
         return null; // TODO: Better API!
     }
