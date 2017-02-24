@@ -45,7 +45,7 @@ public class Station {
                 '}';
     }
 
-    public final class Image {
+    public static class Image {
         public final String small;
         public final String medium;
         public final String large;
