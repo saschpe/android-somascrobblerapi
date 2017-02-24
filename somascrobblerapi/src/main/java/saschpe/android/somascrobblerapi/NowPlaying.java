@@ -16,7 +16,7 @@
 
 package saschpe.android.somascrobblerapi;
 
-public final class NowPlaying {
+public class NowPlaying {
     public final String stationId;
     public final long time;
     public final String artist;

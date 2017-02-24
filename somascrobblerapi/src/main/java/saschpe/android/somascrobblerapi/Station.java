@@ -16,7 +16,7 @@
 
 package saschpe.android.somascrobblerapi;
 
-public final class Station {
+public class Station {
     public final String id;
     public final String title;
     public final String description;
