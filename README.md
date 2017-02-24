@@ -20,7 +20,7 @@ NowPlaying nowPlaying = api.getNowPlaying("groovesalad");
 
 # Download
 ```groovy
-compile 'saschpe.android:somascrobblerapi:1.0.4'
+compile 'saschpe.android:somascrobblerapi:1.0.5'
 ```
 
 Snapshots of the development version are available in [Sonatype's `snapshots` repository][snap].
