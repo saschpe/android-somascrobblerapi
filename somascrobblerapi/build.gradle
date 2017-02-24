@@ -98,6 +98,9 @@ bintray {
         version {
             name = android.defaultConfig.versionName
             desc = descr
+            gpg {
+                sign = true
+            }
         }
     }
 }
