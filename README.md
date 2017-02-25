@@ -2,6 +2,7 @@
 [![Download](https://api.bintray.com/packages/saschpe/maven/android-somascrobblerapi/images/download.svg)](https://bintray.com/saschpe/maven/android-somascrobblerapi/_latestVersion)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 [![Build Status](https://travis-ci.org/saschpe/android-versioninfo.svg?branch=master)](https://travis-ci.org/saschpe/android-versioninfo)
+[![Methods and size](https://img.shields.io/badge/Methods and size-core: 51 | deps: 4669 | 10 KB-e91e63.svg)](http://www.methodscount.com/?lib=saschpe.android%3Asomascrobblerapi%3A1.0.6)
 
 Android client library for [SomaScrobbler API][somascrob]. The test-suite
 defaults to the official deployment at [api.somascrobbler.com][somascrob-api].
