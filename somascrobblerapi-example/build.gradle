@@ -14,4 +14,26 @@
  * limitations under the License.
  */
 
-include ':somascrobblerapi', ':somascrobblerapi-example'
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion '25.0.3'
+
+    defaultConfig {
+        applicationId 'com.example.somascrobblerapi'
+        minSdkVersion 14
+        targetSdkVersion 25
+        versionCode 140100
+        versionName '1.0.0'
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+}
+
+dependencies {
+    compile project(':somascrobblerapi')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+}

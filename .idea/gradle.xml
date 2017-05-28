@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/somascrobblerapi" />
+            <option value="$PROJECT_DIR$/somascrobblerapi-example" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
