@@ -29,7 +29,7 @@ public class NowPlaying {
     public final long duration;
     //public final boolean durationEstimated;
 
-    public NowPlaying(String stationId, long time, String artist, String title, String album, long duration) {
+    public NowPlaying(final String stationId, long time, final String artist, final String title, final String album, long duration) {
         this.stationId = stationId;
         this.time = time;
         this.artist = artist;

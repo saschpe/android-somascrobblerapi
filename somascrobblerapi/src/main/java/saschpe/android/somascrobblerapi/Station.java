@@ -24,7 +24,7 @@ public class Station {
     public final String genre;
     public final Image image;
 
-    public Station(String id, String title, String description, String dj, String genre, Image image) {
+    public Station(final String id, final String title, final String description, final String dj, final String genre, final Image image) {
         this.id = id;
         this.title = title;
         this.description = description;
@@ -50,7 +50,7 @@ public class Station {
         public final String medium;
         public final String large;
 
-        public Image(String small, String medium, String large) {
+        public Image(final String small, final String medium, final String large) {
             this.small = small;
             this.medium = medium;
             this.large = large;

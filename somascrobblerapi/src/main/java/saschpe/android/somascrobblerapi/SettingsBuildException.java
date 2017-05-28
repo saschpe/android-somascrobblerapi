@@ -21,7 +21,7 @@ package saschpe.android.somascrobblerapi;
  * missing or invalid options.
  */
 public final class SettingsBuildException extends RuntimeException {
-    SettingsBuildException(String message) {
+    SettingsBuildException(final String message) {
         super(message);
     }
 }

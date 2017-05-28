@@ -23,7 +23,7 @@ public final class Stats {
     public final long connections;
     public final Map<String, Long> lastTrackUpdates;
 
-    public Stats(long uptime_ms, long connections, Map<String, Long> lastTrackUpdates) {
+    public Stats(long uptime_ms, long connections, final Map<String, Long> lastTrackUpdates) {
         this.uptime_ms = uptime_ms;
         this.connections = connections;
         this.lastTrackUpdates = lastTrackUpdates;

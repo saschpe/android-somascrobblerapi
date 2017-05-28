@@ -20,7 +20,7 @@ public final class Version {
     public final String version;
     public final String socketIo;
 
-    public Version(String version, String socketIo) {
+    public Version(final String version, final String socketIo) {
         this.version = version;
         this.socketIo = socketIo;
     }
