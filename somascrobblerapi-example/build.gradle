@@ -34,6 +34,6 @@ android {
 }
 
 dependencies {
-    compile project(':somascrobblerapi')
-    compile 'com.android.support:appcompat-v7:26.0.1'
+    implementation project(':somascrobblerapi')
+    implementation 'com.android.support:appcompat-v7:26.0.1'
 }
