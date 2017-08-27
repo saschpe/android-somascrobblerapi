@@ -136,7 +136,7 @@ public final class SomaScrobblerApi {
          * Class to create and set up a {@link Settings}.
          */
         public final static class Builder {
-            private Settings settings;
+            private final Settings settings;
 
             public Builder() {
                 settings = new Settings();

@@ -27,10 +27,6 @@ android {
         versionCode 140100
         versionName '1.0.0'
     }
-
-    lintOptions {
-        abortOnError false
-    }
 }
 
 dependencies {

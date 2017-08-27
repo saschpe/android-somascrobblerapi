@@ -42,10 +42,6 @@ android {
         buildConfigField "String", "TEST_ENDPOINT", "\"${project.properties["test.endpoint"]}\""
     }
 
-    lintOptions {
-        abortOnError false
-    }
-
     buildTypes {
         debug {
             consumerProguardFiles 'proguard-rules.pro'
